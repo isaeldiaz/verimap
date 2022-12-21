@@ -51,7 +51,7 @@ all: $(BINS)
 
 install:
 	if [ ! -e $(PREFIX) ] ; then mkdir $(PREFIX); fi
-	$(CP) $(BINS) $(DOCS) $(PREFIX)
+	$(CP) $(BINS) $(PREFIX)
 	if [ ! -e $(BIN_PATH)/$(VERIMAP) ]; then ln -s $(PREFIX)/$(VERIMAP) $(BIN_PATH)/$(VERIMAP); fi
 
 uninstall:
