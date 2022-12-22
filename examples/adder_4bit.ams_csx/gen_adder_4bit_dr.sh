@@ -1,6 +1,6 @@
 rm -f ams_dr-gen.v
 #valgrind --tool=memcheck -v --leak-check=yes --show-reachable=yes --leak-resolution=low --num-callers=8 --suppressions=valgrind.supp \
-../../src/verimap \
+docker run --rm -v $PWD:/work -w /work docker-dtr.nordicsemi.no/isdi/verimap \
 -a ams.asn -r ams.rls -p ams.prm,ams.rti -g ams_dr-gen.v \
 -i ams.v,ams_sr-misc.v,ams_sr-c.v,ams_dr-cl.v,ams_adr-cnv.v,ams_adr-df_ta_clk2.v \
 -o adder_4bit_dr.v adder_4bit_sr.v \
